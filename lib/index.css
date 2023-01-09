@@ -1,0 +1,1029 @@
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+        
+        *{
+            vertical-align: middle;
+        }
+
+        body{
+            font-family: 'NanumSquare';
+        }
+        
+        #header{
+            position: relative;
+        }
+        
+        #logo{
+            margin: 30px 0px 20px;
+        }
+        #logo h1{
+            font-size: 0px;
+            background-image: url(../img/Header_logo.png);
+            background-size: 252px 50px;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 260px;
+            height: 60px;
+        }
+        
+        #menu{
+            background-image: url(../img/header_line.png);
+            background-size: 100% 2px;
+            background-repeat: no-repeat;
+            background-position: 0px 0px;
+            position: relative;
+            padding-top: 2px;
+        }
+        
+        #menu .menu{}
+        #menu .menu ul{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            grid-gap: 0px;
+        }
+        #menu .menu ul li{}
+        #menu .menu ul li a{
+            line-height: 50px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        #menu .menuBox{
+            position: absolute;
+            top: 100%;
+            left: 0px;
+            background-color: white;
+            width: 100%;
+            background-image: url(../img/header_line.png);
+            background-size: 100% 2px;
+            background-repeat: no-repeat;
+            background-position: 0px 0px;
+            overflow: hidden;
+            max-height: 0px;
+            transition: max-height 1s;
+            z-index: 9;
+        }
+        #menu:hover .menuBox{
+            max-height: 500px;
+        }
+        
+        #menu .menuBox .grid{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            grid-gap: 0px;
+            margin: 20px 0px 40px;
+        }
+        
+        #menu .menuBox .grid ul{}
+        
+        #menu .menuBox .grid ul li{
+            width: 100%;
+        }
+        #menu .menuBox .grid ul li a{
+            line-height: 40px;
+            margin: 2px 0px;
+            font-size: 16px;
+            background-size: 26px 31px;
+            background-repeat: no-repeat;
+            background-position: 1px 4px;
+            padding: 0px 15px;
+        }
+        
+        #menu .menuBox .grid ul li a:hover{
+            background-image: url(../img/menu_hover.png);
+            font-weight: bold;
+        }
+        
+        #header .mobile{}
+        #header .mobile .button{
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        
+        #header .mobile .button span{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 26px;
+            height: 2px;
+            background-color: black;
+        }
+        
+        #header .mobile .button span:nth-child(1){
+            transform: translate(-50%,-50%) translateY(-8px);
+        }
+        #header .mobile .button span:nth-child(3){
+            transform: translate(-50%,-50%) translateY(8px);
+        }
+        
+        #header .mobile .menuSide{
+            position: fixed;
+            top: 0px;
+            right: 0px;
+            width: 260px;
+            height: 100vh;
+            z-index: 9999;
+            cursor: pointer;
+            background-color: white;
+            transform: translateX(120%);
+            transition: transform 1s;
+        }
+        #header .mobile.view .menuSide{
+            transform: translateX(0%);
+        }
+        
+        #header .mobile .close{
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 10px;
+            left: -50px;
+            cursor: pointer;
+        }
+        
+        #header .mobile .close span{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%) rotate(45deg);
+            width: 30px;
+            height: 2px;
+            background-color: white;
+        }
+        #header .mobile .close span:nth-child(2){
+            transform: translate(-50%,-50%) rotate(-45deg);
+        }
+        
+        #header .mobile .menuSide .logo{
+            padding: 20px 30px;
+        }
+        #header .mobile .menuSide .logo img{
+            width: 100%;
+        }
+        
+        #header .mobile .menuSide .list{
+            background-image: url(../img/header_line.png);
+            background-size: 100% 2px;
+            background-repeat: no-repeat;
+            background-position: 0px 0px;
+            padding-top: 2px;
+        }
+        
+        #header .mobile .menuSide .list > li{
+            width: 100%;
+            background-color: #f9f9f9;
+        }
+        #header .mobile .menuSide .list > li span{
+            width: 100%;
+            background-color: white;
+            line-height: 50px;
+            font-size: 15px;
+            text-align: left;
+            padding: 0px 20px;
+            border-bottom: 1px solid #ddd;
+            display: inline-block;
+        }
+        
+        #header .mobile .menuSide .list > li > ol{
+            text-align: left;
+            overflow: hidden;
+            max-height: 0px;
+            transition: max-height 1s;
+        }
+        #header .mobile .menuSide .list > li.view > ol{
+            max-height: 500px;
+        }
+        
+        #header .mobile .menuSide .list > li > ol li{
+            width: 100%;
+        }
+        #header .mobile .menuSide .list > li > ol li a{
+            width: 100%;
+            line-height: 30px;
+            font-size: 13px;
+            padding: 2px 20px 0 20px;
+        }
+        
+        #header .mobile .menuBg{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: #000b;
+            top: 0px;
+            left: 0px;
+            z-index: 9998;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: opacity 1s 0s, transform 0s 1s;
+        }
+        #header .mobile.view .menuBg{
+            opacity: 1;
+            transform: translateX(0%);
+            transition: opacity 1s 0s, transform 0s 0s;
+        }
+    
+        /* 메인배너 */
+        #home .slider .swiper-slide{
+            width: 100%;
+            height: 800px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: height .5s;
+        }
+        #home .slider .swiper-slide.swiper-slide-active{
+            opacity: 1 !important;
+        }
+        
+        #home .slider .swiper-slide .box{
+            background-image: url(../img/main_txt_box.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 636px;
+            height: 296px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        
+        /* 배너 글내용 */
+        #home .slider .swiper-slide .box .title{
+            position: absolute;
+            top: 50%;
+            left: 0%;
+            width: 100%;
+            transform: translateY(-50%);
+        }
+
+        #home .slider .swiper-slide .box .title .name{
+            font-size: 45px;
+            font-weight: bold;
+            transform: translateY(60px);
+            opacity: 0;
+        }
+        #home .slider .swiper-slide .box .title .name.lh{
+            line-height: 50px;
+        }
+
+        #home .slider .swiper-slide .box .title .sub01{
+            font-size: 16px;
+            font-weight: bold;
+            padding: 0px 40px;
+            margin-bottom: 5px;
+            transform: translateY(60px);
+            opacity: 0;
+        }
+        #home .slider .swiper-slide .box .title .sub02{
+            font-size: 16px;
+            font-weight: bold;
+            padding: 0px 40px;
+            margin-top: 20px;
+            transform: translateY(60px);
+            opacity: 0;
+        }
+        
+        /* .box 스크롤 */
+        #home .slider .swiper-slide.swiper-slide-active .box .title .name{
+            transform: translateY(0px);
+            opacity: 1;
+            transition: all 1s;
+        }
+        #home .slider .swiper-slide.swiper-slide-active .box .title .sub01{
+            transform: translateY(0px);
+            opacity: 1;
+            transition: all 1s .5s;
+        }
+        #home .slider .swiper-slide.swiper-slide-active .box .title .sub02{
+            transform: translateY(0px);
+            opacity: 1;
+            transition: all 1s .5s;
+        }
+        
+        /* 슬라이드 배너 이미지 */
+        #home .slider .swiper-slide.p1{
+            background-image: url(../img/main_visual1.jpg);
+        }
+        #home .slider .swiper-slide.p2{
+            background-image: url(../img/main_visual2.jpg);
+        }
+
+        /* 배너오른쪽버튼 */
+        #home .slider .next{
+            top: 56%;
+            right: 475px;
+            left: auto;
+            border: 1px solid #000;
+            padding: 35px;
+            border-radius: 50px;
+        }
+        #home .slider .next::after{
+            font-size: 28px;
+            color: #000;
+        }
+
+        /* 배너왼쪽버튼 */
+        #home .slider .prev{
+            top: 56%;
+            left: 475px;
+            right: auto;
+            border: 1px solid #000;
+            padding: 35px;
+            border-radius: 50px;
+        }
+        #home .slider .prev::after{
+            font-size: 28px;
+            color: #000;
+        }
+        
+        /* Page : 공통설정 */
+        #main .section{
+            width: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 80px 0px;
+        }
+        
+        #main .section .wrap > .title{
+            margin: 20px 0px;
+        }
+        #main .section .wrap > .title .name{
+            margin: 20px 0px;
+            font-size: 45px;
+            font-weight: bold;
+        }
+        #main .section .wrap > .title .sub{
+            font-size: 16px;
+            color: #666;
+        }
+        
+        #main .section .info{
+            display: inline-grid;
+            grid-template-columns: repeat(5,1fr);
+            grid-gap: 4px;
+            width: 100%;
+        }
+        #main .section .info li{}
+        #main .section .info li a{
+            background-color: white;
+            padding: 50px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            flex-direction: column;
+            width: 100%;
+            border: 1px solid white;
+        }
+        #main .section .info li:hover a{
+            border-color: black;
+        }
+        
+        #main .section .info li a img{}
+        #main .section .info li a .subject{
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+        
+        /* Page : 세부설정 */
+        /* 심리상담 */
+        #page1{
+            background-image: url(../img/sec2_bg.jpg);
+        }
+        #page1 .wrap > .title .name{
+            color: #000;
+        }
+        #page1 .wrap > .title .sub{
+            margin: 0 0 45px;
+        }
+        
+        /* 다소니 */
+        #page2{
+            background-image: url(../img/sec1_bg.jpg);
+        }
+        #page2 .wrap > .title .sub{
+            font-size: 20px;
+            margin: 0 0 45px;
+        }
+
+        #page2 #sangsim{
+            position: relative;
+        }
+
+        /* 다소니 - 심리상담예약신청 */
+        #page2 #sangsim .adviceList{
+            position: absolute;
+            top: 40px;
+            left: 100px;
+        }
+
+        #page2 #sangsim .adviceList > ol{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        #page2 #sangsim .adviceList > ol li{
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            background-color: #f8c268;
+            margin-bottom: 10px;
+        }
+        #page2 #sangsim .adviceList > ol li a{
+            font-size: 16.5px;
+            color: #fff;
+        }
+
+        #page2 #sangsim .advice{
+            background-color: #fff;
+            border: 3px solid #ff8f2b;
+            border-radius: 35px 0 0 35px;
+            width: 24.7%;
+            min-height: 250px;
+            padding: 40px 0 20px 0;
+            margin-right: 5px;
+        }
+        #page2 #sangsim .advice .advice_n{
+            font-size: 20px;
+        }
+
+        #page2 #sangsim figure{
+            margin: 20px 0;
+        }
+
+        #page2 #sangsim .advice .button a{
+            width: 120px;
+            line-height: 32px;
+            background-color: #f8c268;
+            border: 1px solid #f8c268;
+            border-radius: 20px;
+            color: #fff;
+            transition: all 0.5s;
+        }
+        #page2 #sangsim .advice .button a::after{
+            content: '\f105';
+            font-family:"Font Awesome 5 Free";
+            font-weight: 600;
+            padding-left: 7px;
+        }
+        #page2 #sangsim .advice .button a:hover{
+            background-color: white;
+            color: #f8c268;
+        }
+
+        /* 다소니 - 심리검사예약신청 */
+        #page2 #sangsim .test{
+            background-color: #fff;
+            border: 3px solid #11a990;
+            border-radius: 0 35px 35px 0;
+            width: 24.7%;
+            min-height: 250px;
+            padding: 40px 0 20px 0;
+            margin-left: 5px;
+        }
+        #page2 #sangsim .test .test_n{
+            font-size: 20px;
+        }
+
+        #page2 #sangsim .test .button a{
+            width: 120px;
+            line-height: 32px;
+            background-color: #11a990;
+            border: 1px solid #11a990;
+            border-radius: 20px;
+            color: #fff;
+            transition: all 0.5s;
+        }
+        #page2 #sangsim .test .button a::after{
+            content: '\f105';
+            font-family:"Font Awesome 5 Free";
+            font-weight: 600;
+            padding-left: 7px;
+        }
+        #page2 #sangsim .test .button a:hover{
+            background-color: white;
+            color: #11a990;
+        }
+        
+        #page2 #sangsim .testList{
+            position: absolute;
+            top: 40px;
+            right: 100px;
+        }
+
+        #page2 #sangsim .testList > ol{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        #page2 #sangsim .testList > ol li{
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            background-color: #11a990;
+            margin-bottom: 10px;
+        }
+        #page2 #sangsim .testList > ol li a{
+            font-size: 16.5px;
+            color: #fff;
+        }
+
+        /* 다소니 종합 심리평가 */
+        #page3{
+            background-image: url(../img/sec3_bg.jpg);
+        }
+        #page3 .wrap > .title .name{
+            color: #000;
+        }
+        #page3 .wrap > .title .sub{
+            margin: 0 0 45px;
+        }
+        #page3 .wrap > .title .button{
+            line-height: 32px;
+            border-radius: 20px;
+            background-color: #65b07e;
+            color: white;
+            border: 1px solid #65b07e;
+            width: 120px;
+            margin-bottom: 20px;
+        }
+        #page3 .wrap > .title .button::after{
+            content: '\f105';
+            font-family:"Font Awesome 5 Free";
+            font-weight: 600;
+            padding-left: 7px;
+        }
+        #page3 .wrap > .title .button:hover{
+            background-color: white;
+            color: #65b07e;
+        }
+    
+        #page3 .list{
+            display: inline-grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 4px;
+            width: 100%;
+            height: auto;
+        }
+        #page3 .list li{
+            background-color: white;
+            padding: 40px;
+            position: relative;
+            padding-bottom: 60px;
+        }
+
+        #page3 .list li .subject{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #page3 .list li img{
+            margin: 25px 0px;
+        }
+        #page3 .list li .button{
+            line-height: 32px;
+            border-radius: 20px;
+            background-color: #65b07e;
+            color: white;
+            border: 1px solid #65b07e;
+            width: 120px;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all .7s;
+        }
+        #page3 .list li .button::after{
+            content: '\f105';
+            font-family:"Font Awesome 5 Free";
+            font-weight: 600;
+            padding-left: 7px;
+        }
+        #page3 .list li .button:hover{
+            background-color: white;
+            color: #65b07e;
+        }
+        
+        /* Page : 공통 스크롤 */
+        #main .section .wrap{
+            transform: translateY(60px);
+            opacity: 0;
+            transition: all 1s;
+        }
+        #main .section.view .wrap{
+            transform: translateY(0px);
+            opacity: 1;
+        }
+        
+        #main .section ul{}
+        #main .section ul li{
+            transform: translateY(60px);
+            opacity: 0;
+        }
+        #main .section.view ul li{
+            transform: translateY(0px);
+            opacity: 1;
+        }
+        
+        #main .section.view ul li:nth-child(1){
+            transition: all 1s .3s;
+        }
+        #main .section.view ul li:nth-child(2){
+            transition: all 1s .5s;
+        }
+        #main .section.view ul li:nth-child(3){
+            transition: all 1s .7s;
+        }
+        #main .section.view ul li:nth-child(4){
+            transition: all 1s .9s;
+        }
+        #main .section.view ul li:nth-child(5){
+            transition: all 1s 1.1s;
+        }
+        
+        /* 공지사항 및 상담후기 */
+        #board{
+            padding: 80px 0px;
+        }
+        
+        /* 공지사항 및 상담후기 */
+        #board .board{
+            display: inline-grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 40px;
+        }
+
+        /* 스크롤설정 */
+        #board .board > li{
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+        #board.view .board > li{
+            transform: translateX(0px);
+            opacity: 1;
+        }
+        
+        #board.view .board > li:nth-child(1){
+            transition: all 1s .2s;
+        }
+        #board.view .board > li:nth-child(2){
+            transition: all 1s .4s;
+        }
+        
+        /* 공지사항 */
+        #board .board > li > .title{}
+        #board .board > li > .title .name{
+            font-size: 23px;
+            font-weight: bold;
+            line-height: 50px;
+            color: #419d5d;
+            background-image: url(../img/board_1.png);
+            background-size: 26px 31px;
+            background-repeat: no-repeat;
+            background-position: 5px 15px;
+            padding: 0px 15px;
+        }
+        
+        #board .board > li > .title .more{
+            width: 40px;
+            height: 40px;
+            position: relative;
+            transition: transform .5s;
+        }
+        #board .board > li > .title:hover .more{
+            transform: rotate(180deg);
+        }
+        
+        #board .board > li > .title .more span{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 26px;
+            height: 2px;
+            background-color: #419d5d;
+        }
+        #board .board > li > .title .more span:nth-child(1){
+            transform: translate(-50%,-50%) rotate(90deg);
+        }
+        
+        /* 상담후기 */
+        #board .board > li > .title .nick{
+            font-size: 23px;
+            font-weight: bold;
+            line-height: 50px;
+            color: #eea800;
+            background-image: url(../img/board_2.png);
+            background-size: 26px 31px;
+            background-repeat: no-repeat;
+            background-position: 5px 15px;
+            padding: 0px 15px;
+        }
+        #board .board > li > .title .see{
+            width: 40px;
+            height: 40px;
+            position: relative;
+            transition: transform .5s;
+        }
+        #board .board > li > .title:hover .see{
+            transform: rotate(180deg);
+        }
+        
+        #board .board > li > .title .see span{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 26px;
+            height: 2px;
+            background-color: #eea800;
+        }
+        #board .board > li > .title .see span:nth-child(1){
+            transform: translate(-50%,-50%) rotate(90deg);
+        }
+        
+        #board .board > li > .content{
+            margin-top: 20px;
+        }
+        #board .board > li > .content li{
+            width: 100%;
+            margin: 5px 0 0 15px;
+        }
+        #board .board > li > .content li a{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 100px;
+            grid-gap: 10px;
+        }
+        
+        #board .board > li > .content li a .subject{
+            width: 100%;
+            line-height: 30px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: left;
+        }
+        #board .board > li > .content li a .date{
+            color: #6b6b6b;
+            line-height: 30px;
+        }
+        
+        /* 푸터 */
+        #footer{
+            background-color: #222222;
+            padding: 70px 0 75px;
+            color: white;
+        }
+        
+        #footer .flex{}
+        #footer .flex .br{
+            display: none;
+        }
+
+        #footer .flex .logo{
+            flex: 1;
+        }
+        #footer .flex .logo img{}
+        
+        #footer .flex .address{
+            flex: 3;
+            text-align: left;
+            font-size: 13px;
+            line-height: 25px;
+            padding: 0px 40px;
+        }
+        #footer .flex .address span{
+            font-size: 13px;
+            color: #c3c3c3;
+        }
+        
+        #footer .flex .sns{
+            flex: 1;
+            cursor: pointer;
+        }
+        #footer .flex .sns li{}
+        #footer .flex .sns li a{
+            font-size: 0px;
+            margin: 12px;
+            position: relative;
+        }
+        #footer .flex .sns li a img{
+            position: absolute;
+            top: 50%;
+            right: 7px;
+            transform: translateY(-50%);
+            width: 65%;
+        }
+
+        /* 반응형 */
+        @media only screen and (min-width:100px) and (max-width:1200px){
+            #home .slider .prev{
+                left: 100px;
+            }
+            #home .slider .next{
+                right: 100px;
+            }
+        }
+
+        @media only screen and (min-width:100px) and (max-width:1000px){
+            #logo h1{
+                background-size: 178px 35px;
+                height: 40px;
+            }
+        
+            #menu{
+                border: 0px;
+            }
+
+            #home .slider .prev{
+                top: 52%;
+                left: 10px;
+            }
+            #home .slider .next{
+                top: 52%;
+                right: 10px;
+            }
+            
+            #main .section{
+                padding: 80px 20px;
+            }
+            #main .section .wrap > .title .name{
+                font-size: 43px;
+            }
+            #main .section .wrap > .title .sub{
+                font-size: 15px;
+            }
+
+            #page2 #sangsim .adviceList, #page2 #sangsim .testList{
+                display: none;
+            }
+            #page2 #sangsim .advice, #page2 #sangsim .test{
+                width: 48%;
+            }
+            #page2 #sangsim .advice .advice_n, #page2 #sangsim .test .test_n{
+                font-size: 19px;
+            }
+            #page2 #sangsim .advice .button a, #page2 #sangsim .test .button a{
+                font-size: 13px;
+            }
+
+            #page3 .wrap > .title .button, #page3 .list li .button{
+                line-height: 35px;
+                font-size: 13px;
+            }
+
+            #board{
+                padding: 60px 20px;
+            }
+            #board .board > li > .title .name, #board .board > li > .title .nick{
+                font-size: 20px;
+            }
+            #board .board > li > .title .more span, #board .board > li > .title .see span{
+                width: 20px;
+            }
+
+            #board .board > li > .content {
+                margin-top: 10px;
+            }
+            #board .board > li > .content li a .subject{
+                font-size: 13px;
+            }
+            #board .board > li > .content li a .date{
+                display: none;
+            }
+
+            #footer{
+                padding: 40px 0 45px 0;
+            }
+            #footer .flex{
+                flex-direction: column;
+            }
+            #footer .flex .logo img {
+                width: 178px;
+                height: 35px;
+            }           
+            #footer .flex .br{
+                display: block;
+            }
+            #footer .flex .address{
+                text-align: center;
+                order: 2;
+            }
+            #footer .flex .sns{
+                margin: 25px 0px;
+                order: 1;
+            }
+            #footer .flex .sns li a{
+                margin: 0;
+                width: 50px;
+                display: flex;
+                justify-content: space-between;
+            }
+
+        }
+        
+        @media only screen and (min-width:100px) and (max-width:600px){
+            #logo h1{
+                background-size: 178px 35px;
+                width: 178px;
+                height: 35px;
+            }
+            
+            #home .slider .swiper-slide .box{
+                width: 80%;
+                height: 300px;
+                top: 40%;
+            }
+            #home .slider .swiper-slide .box .title .name{
+                font-size: 38px;
+            }
+            #home .slider .swiper-slide .box .title .sub{
+                font-size: 14px;
+            }
+            #home .slider .swiper-slide .box .title .sub01, #home .slider .swiper-slide .box .title .sub02{
+                font-weight: 400;
+            }
+            
+            #home .slider .prev, #home .slider .next{
+                display: none;
+            }
+
+            #main .section {
+                padding: 60px 20px;
+            }
+            #main .section .wrap > .title img{
+                width: 25px;
+                height: 27px;
+            }
+            #main .section .wrap > .title .name {
+                font-size: 32px;
+                margin: 13px 0;
+            }
+            #main .section .wrap > .title .sub {
+                font-size: 13px;
+            }
+
+            #page1 .youtube iframe{
+                width: 98%;
+             }
+
+            #page2 .wrap > .title .sub {
+                font-size: 17px;
+            }
+            #page2 #sangsim .advice .advice_n, #page2 #sangsim .test .test_n {
+                font-size: 16px;
+            }
+            #page2 #sangsim .advice .button a, #page2 #sangsim .test .button a {
+                font-size: 11px;
+            }
+
+            #page2 #sangsim figure {
+                margin: 27px 0;
+            }
+            #page2 #sangsim figure img{
+                width: 82px;
+                height: 60px;
+            }
+
+            #page3 .list {
+                grid-template-columns: 1fr;
+            }
+            #page3 .wrap > .title .button, #page3 .list li .button {
+                line-height: 32px;
+                font-size: 11px;
+            }
+            #page3 .list li .subject {
+                font-size: 18px;
+            }
+            
+            #board {
+                padding: 30px 20px;
+            }
+            #board .board {
+                grid-template-columns: 1fr;
+                grid-gap: 20px;
+            }
+            #board .board > li > .title .name, #board .board > li > .title .nick {
+                font-size: 18px;
+            }
+            #board .board > li > .title .more span, #board .board > li > .title .see span {
+                width: 18px;
+            }
+            #board .board > li > .content {
+                margin-top: 0px;
+            }
+            #board .board > li > .content li a .subject {
+                font-size: 12px;
+                line-height: 20px;
+            }
+
+        }
